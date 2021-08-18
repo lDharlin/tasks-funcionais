@@ -2,6 +2,8 @@ package br.com.luandharlin.tasks.funcional;
 
 import static org.junit.Assert.assertEquals;
 
+import java.net.MalformedURLException;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ public class TasksTest {
 	WebDriver driver;
 	
 	@Test
-	public void deveCadastrarNovaTask() {
+	public void deveCadastrarNovaTask() throws MalformedURLException {
 		try {
 			driver = DriverFactory.getDriver();
 			driver.findElement(By.id("addTodo")).click();
@@ -27,7 +29,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void naodeveCadastrarTaskSemDescricao() {
+	public void naodeveCadastrarTaskSemDescricao() throws MalformedURLException {
 		try {
 			driver = DriverFactory.getDriver();
 			driver.findElement(By.id("addTodo")).click();
